@@ -1,0 +1,19 @@
+{
+  "name": "excel_course",
+  "version": "1.0.0",
+  "description": "pure JS excel app",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaleraGroup/excel_imitation.git"
+  },
+  "author": "Andre Mokrousov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GaleraGroup/excel_imitation/issues"
+  },
+  "homepage": "https://github.com/GaleraGroup/excel_imitation#readme"
+}
