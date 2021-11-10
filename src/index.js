@@ -1,2 +1,2 @@
-import './module'
-console.log('Start APP')
+import './scss/index.scss';
+
