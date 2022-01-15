@@ -1,7 +1,10 @@
 {
     "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaVersion": 12
+    "ecmaFeatures": {
+        "modules": true,
+        "arrowFunctions": true,
+        "classes": true,
+        "spread":true
     },
     "env": {
         "es6": true,
@@ -13,7 +16,7 @@
     "rules": {
         "no-console": "off",
         "no-trailing-spaces": "off",
-        
+        "operator-linebreak": "off"
     },
     "extends": [
         "eslint:recommended", "google"
