@@ -38,8 +38,9 @@ module.exports = {
     resolve: {
         extensions: ['.js'],
         alias: {
-            '@': path.resolve(__dirname, 'src'), //Alias - маска для замены пути вида ../../../../core/
-            '@core': path.resolve(__dirname, 'src/core')
+            '@': path.resolve(__dirname, 'src'),
+            '@core': path.resolve(__dirname, 'src/core'),
+            '@components': path.resolve(__dirname, 'src/components')
         }
     },
     devtool: isDev ? 'source-map' : false,
