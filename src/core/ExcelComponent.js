@@ -12,10 +12,10 @@ export class ExcelComponent extends DomListener {
     }
 
     init() {
-        this.initDOMListener()
+        this.initDOMListeners()
     }
 
     destroy() {
-        this.removeDOMListener()
+        this.removeDOMListeners()
     }
 }
