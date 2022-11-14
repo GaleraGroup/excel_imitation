@@ -3,13 +3,13 @@
 
 export class Dom {
     constructor(selector) {
-        this.$el = typeof selector === 'string'
-            ? document.querySelector(selector)
-            : selector
+        this.$el = typeof selector === 'string' ?
+            document.querySelector(selector) :
+            selector
     }
 
     html(html) {
-        if (typeof html === 'string' ) {
+        if (typeof html === 'string') {
             this.$el.innerHTML = html
             return this
         }
@@ -42,6 +42,32 @@ export class Dom {
 
         return this
     }
+
+    findAll(selector) {
+        return this.$el.querySelectorAll(selector)
+    }
+
+    //returned parent element by selector
+    closest(selector) {
+        return $(this.$el.closest(selector))
+    }
+
+    //returned coodrs for dom-element
+    getCoords() {
+        return this.$el.getBoundingClientRect()
+    }
+
+    //getter
+    get data() {
+        return this.$el.dataset
+    }
+
+    css(styles = {}) {
+        Object
+            .keys(styles)
+            .forEach(key => this.$el.style[key] = styles[key])
+    }
+
 }
 
 export function $(selector) {
