@@ -20,6 +20,7 @@
     .row-info {
         display: flex;
         justify-content: center;
+        position: relative;
         align-items: center;
         min-width: $info-cell-width;
         height: 100%;
@@ -35,8 +36,10 @@
     .column {
         display: flex;
         justify-content: center;
+        position: relative;
+
         align-items: center;
-        min-width: 40px;
+        min-width: 40px; 
         width: $cell-width;
         border: 1px solid $border-color;
         border-top: none;
@@ -58,8 +61,64 @@
 
         &.selected {
             border: none;
-            outline: 2px solid #3c74ff;
+            outline: 2px solid $select-color;
             z-index: 2;
+        }
+    }
+
+    .column__resize,
+    .row__resize {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: $select-color;
+        opacity: 0;
+        z-index: 1000;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:active {
+            opacity: 1;
+        }
+    }
+
+    .column__resize {
+        top: 0;
+        width: 4px;
+
+        &:hover {
+            cursor: e-resize;
+        }
+
+        &:active::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 1px;
+            height: 100vh;
+            z-index: 1000;
+            background-color: $select-color;
+        }
+    }
+    
+
+    .row__resize {
+        left: 0;
+        height: 4px;
+        
+        &:hover {
+            cursor: row-resize;
+        }
+
+        &:active::after {
+            content: '';
+            position: absolute;
+            width: 100vw;
+            height: 1px;
+            z-index: 1000;
+            background-color: $select-color;
         }
     }
 }

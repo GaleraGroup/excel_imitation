@@ -4,6 +4,13 @@ export class Header extends ExcelComponent {
 
     static className = 'excel__header'
 
+    constructor($root) {
+      super($root, {
+        name: 'Header',
+        listeners: ['click']
+      })
+    }
+
     toHTML() {
         return `
           <input type="text" class="input" value="Новая таблица" />
@@ -20,5 +27,9 @@ export class Header extends ExcelComponent {
     
           </div>
         `
-      }
+    }
+
+    onClick() {
+      console.log('click')
+    }
 }
