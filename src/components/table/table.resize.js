@@ -10,7 +10,8 @@ export function resizeHandler(event) {
     const $rowInfo = $(this.$root.$el.querySelector('[data-info="info"')).getCoords()
     const coords = $parent.getCoords()
     const resizerOrient = event.target.dataset.resize
-    const cells = this.$root.findAll(`[data-col="${$parent.data.col}"]`)
+    const cells = this.$root.findAll(`[data-column="${$parent.data.col}"]`)
+
     let value
     let delta
 

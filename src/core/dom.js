@@ -43,8 +43,22 @@ export class Dom {
         return this
     }
 
+    find(selector) {
+        return $(this.$el.querySelector(selector))
+    }
+
     findAll(selector) {
         return this.$el.querySelectorAll(selector)
+    }
+
+    addClass(className) {
+        this.$el.classList.add(className)
+    }
+
+    removeClass(classNames) {
+        const [...rest] = classNames
+        rest
+            .forEach(name => this.$el.classList.remove(name))
     }
 
     //returned parent element by selector
@@ -61,6 +75,17 @@ export class Dom {
     get data() {
         return this.$el.dataset
     }
+
+
+    id(parse) {
+        if (parse) {
+            // const [row, col] = this.data.id
+            // return({'row': row, 'col': col})
+
+        }
+        return this.data.id
+    }
+
 
     css(styles = {}) {
         Object

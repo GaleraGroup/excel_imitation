@@ -58,11 +58,17 @@
         color: #111;
         white-space: nowrap;
         outline: none;
+        cursor: default;
+        
 
         &.selected {
             border: none;
             outline: 2px solid $select-color;
             z-index: 2;
+        }
+
+        &.move-selected {
+            background-color: $select-move-color;
         }
     }
 

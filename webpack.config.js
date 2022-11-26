@@ -41,12 +41,32 @@ module.exports = {
             '@': path.resolve(__dirname, 'src'),
             '@core': path.resolve(__dirname, 'src/core'),
             '@components': path.resolve(__dirname, 'src/components')
+        },
+        fallback: {
+            "util": require.resolve("util/"),
+            "buffer": false,
+            "os": false,
+            "fs": false,
+            "vm": false,
+            "url": false,
+            "tls": false,
+            "net": false,
+            "path": false,
+            "zlib": false,
+            "http": false,
+            "https": false,
+            "stream": false,
+            "crypto": false,
+            "querystring": false,
+            "crypto-browserify": require.resolve('crypto-browserify'),
+            "constants": false,
+            "assert": require.resolve("assert/")
         }
     },
     devtool: isDev ? 'source-map' : false,
     devServer: {
         port: 3000,
-        hot: isDev
+        hot: isDev,
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -67,7 +87,12 @@ module.exports = {
             filename: filename('css')
         }),
     ],
+    // node: {
+    //     Buffer: false,
+    //     process: false
+    // },
     module: {
+        exprContextCritical: false,
         rules: [{
                 test: /\.s[ac]ss$/i,
                 use: [
